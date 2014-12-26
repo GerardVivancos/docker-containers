@@ -16,3 +16,7 @@ This will create an image enabled to run the preview version of the AWS CLI that
 aws-cli
 -------
 This will create an image enabled to run the latest AWS CLI. It is useful because each container can use it's own AK/SK set, so with multiple containers you can manage multiple accounts with no conflicts. It also prevents you from potential Python version conflicts with your host system's installation.
+
+ruby/ruby-2.2.0
+---------------
+First version of the Dockerfile. It builds an image with Ruby 2.2.0 support, compliled from source
