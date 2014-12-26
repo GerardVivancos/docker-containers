@@ -12,3 +12,7 @@ Please feel free to come back to me with improvements.
 aws-ecs-cli
 -----------
 This will create an image enabled to run the preview version of the AWS CLI that is needed to use EC2 Container Service. It is useful because this way it cannot interfere with your current installation of the CLI.
+
+aws-cli
+-------
+This will create an image enabled to run the latest AWS CLI. It is useful because each container can use it's own AK/SK set, so with multiple containers you can manage multiple accounts with no conflicts. It also prevents you from potential Python version conflicts with your host system's installation.
