@@ -9,4 +9,5 @@ WORKDIR ruby-2.2.0
 RUN ./configure --disable-install-doc --enable-shared && make && make install && make clean
 WORKDIR /root
 RUN rm -rf ruby-2.2.0
+RUN gem install bundler --no-rdoc --no-ri
 ENTRYPOINT ["/bin/bash"]
