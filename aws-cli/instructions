@@ -1,0 +1,14 @@
+Edit the credentials file in the .aws/ directory to include your AK/SK combination.
+Edit the .aws/config file to the region you are working with 
+Then build the image with:
+	docker build [-t repo/name] .
+Run a container from it:
+	docker run [--name container-name] -t -i {image-id | repo/name}  
+This should give you a prompt to the container. Test the cli by running:
+	aws ec2 describe-instances
+Feel free to reconfigure credentials and stuff. Changes will stay as long as you don't rm the container:
+	aws config
+Exit the container with a simple:
+	exit
+You can run it again with:
+	docker start -a -i {container-name | container-id}
