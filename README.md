@@ -19,4 +19,4 @@ This will create an image enabled to run the latest AWS CLI. It is useful becaus
 
 ruby/ruby-2.2.0
 ---------------
-First version of the Dockerfile. It builds an image with Ruby 2.2.0 support, compliled from source. It also installs Bundler.
+It builds an image with Ruby 2.2.0 installed, compliled from source. It also installs Bundler.
