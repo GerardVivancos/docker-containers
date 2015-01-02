@@ -20,3 +20,7 @@ This will create an image enabled to run the latest AWS CLI. It is useful becaus
 ruby/ruby-2.2.0
 ---------------
 It builds an image with Ruby 2.2.0 installed, compliled from source. It also installs Bundler.
+
+shared-storage
+--------------
+It builds a minimal (~2MB) image based on busybox that creates a volume in /data. It's purpose is to serve as a shared volume across related containers.
