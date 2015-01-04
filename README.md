@@ -40,3 +40,6 @@ Builds an image (~2MB) based on Busybox that lists a directory (it just launches
 caching-dns-server/bind-server
 ------------------------------
 Builds an image to create containers running the BIND DNS server. Containers should be run with something like `docker run -d -p 53:53/tcp -p 53:53/udp --your-meaningful-name your-image-tag`
+If you need to change the configuration once the container is running, just use the vi container (`gerardvivancos/vi`) or similar and attach it to the volume of the DNS server container: `docker run -ti --rm --volumes-from dns-server-container-name gerardvivancos/vi /var/named/named.conf`. You can aalso add new files, such as zone files, in the same way. When you're done editing, just restart the DNS container: `docker restart dns-server-container-name`.
+Keep in mind that the default `allow-query` options won't let you query the DNS server from outside the Docker host. This is because the options `localhost` and `localnets` refer to the virtual network range of the container and queries made from the local network of the host are seen as being made from outside the network of the container. You might want to edit named.conf and add your local network CIDR to the allow-query directive (for example: allow-query     { localhost; localnets; 192.168.0.0/16; };`
+
