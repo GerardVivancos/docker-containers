@@ -3,7 +3,7 @@ docker-containers
 
 This is a small collection of Dockerfiles I've been creating mostly for learning and testing purposes.
 
-They can be used to build Docker images, usually by running ```docker build .```from inside the Dockerfile's directory.
+They can be used to build Docker images, usually by running `docker build .`from inside the Dockerfile's directory.
 
 Intent is supposed to be clear from the directory name, so Dockerfile inside an nginx directory is expected to build an Nginx server. Some of them include specific instructions.
 
@@ -27,4 +27,4 @@ It builds a minimal (~2MB) image based on busybox that creates a volume in /data
 
 dynamodb
 --------
-Builds an image for local dynamodb development
+Builds an image for local dynamodb development. By default, it uses data persistence to a volume mounted on /opt/dynamodb/data. You can override that behaviour and make it use the RAM with no persistence when creating your container: `docker run -d -P --name your-meaninful-name your-image-tag "-inMemory"`
