@@ -28,3 +28,7 @@ It builds a minimal (~2MB) image based on busybox that creates a volume in /data
 dynamodb
 --------
 Builds an image for local dynamodb development. By default, it uses data persistence to a volume mounted on /opt/dynamodb/data. You can override that behaviour and make it use the RAM with no persistence when creating your container: `docker run -d -P --name your-meaninful-name your-image-tag "-inMemory"`
+
+vi
+--
+Builds an image (~2MB) based on Busybox that starts the vi editor. Intended usage is to edit files on shared volumes. When you launch a container based on it, pass the path to the file to be opened. Example: `docker run -ti --rm your-image-tag /path/to/file` (the `--rm` flag deletes the container after editing is done)
