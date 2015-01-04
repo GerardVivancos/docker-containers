@@ -24,3 +24,7 @@ It builds an image with Ruby 2.2.0 installed, compliled from source. It also ins
 shared-storage
 --------------
 It builds a minimal (~2MB) image based on busybox that creates a volume in /data. It's purpose is to serve as a shared volume across related containers.
+
+dynamodb
+--------
+Builds an image for local dynamodb development
