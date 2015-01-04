@@ -28,3 +28,7 @@ It builds a minimal (~2MB) image based on busybox that creates a volume in /data
 dynamodb
 --------
 Builds an image for local dynamodb development. By default, it uses data persistence to a volume mounted on /opt/dynamodb/data. You can override that behaviour and make it use the RAM with no persistence when creating your container: `docker run -d -P --name your-meaninful-name your-image-tag "-inMemory"`
+
+caching-dns-server/bind-server
+------------------------------
+Builds an image to create containers running the BIND DNS server. Containers should be run with something like `docker run -d -p 53:53/tcp -p 53:53/udp your-image-tag`
