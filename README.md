@@ -3,7 +3,7 @@ docker-containers
 
 This is a small collection of Dockerfiles I've been creating mostly for learning and testing purposes.
 
-They can be used to build Docker images, usually by running `docker build .`from inside the Dockerfile's directory.
+They can be used to build Docker images, usually by running `docker build .`from inside the Dockerfile's directory. You can also find almost all the images on my Docker Hub repository: https://hub.docker.com/u/gerardvivancos/
 
 Intent is supposed to be clear from the directory name, so Dockerfile inside an nginx directory is expected to build an Nginx server. Some of them include specific instructions.
 
