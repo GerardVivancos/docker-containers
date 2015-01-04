@@ -32,3 +32,7 @@ Builds an image for local dynamodb development. By default, it uses data persist
 vi
 --
 Builds an image (~2MB) based on Busybox that starts the vi editor. Intended usage is to edit files on shared volumes. When you launch a container based on it, pass the path to the file to be opened. Example: `docker run -ti --rm your-image-tag --volumes-from some-other-container /path/to/file` (the `--rm` flag deletes the container after editing is done)
+
+ls
+--
+Builds an image (~2MB) based on Busybox that lists a directory (it just launches `ls -l`). Intended usage is to list directories on shared volumes. When you launch a container based on it, pass the path to the directory to be listed. Example: `docker run -ti --rm your-image-tag --volumes-from some-other-container /path/to/directory` (the `--rm` flag deletes the container after editing is done)
