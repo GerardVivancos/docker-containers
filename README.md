@@ -44,3 +44,15 @@ Builds an image to create containers running the BIND DNS server. Containers sho
 If you need to change the configuration once the container is running, just use the vi container (`gerardvivancos/vi`) or similar and attach it to the volume of the DNS server container: `docker run -ti --rm --volumes-from dns-server-container-name gerardvivancos/vi /var/named/named.conf`. You can also add new files -such as zone definitions- in the same way. When you're done editing, just restart the DNS container: `docker restart dns-server-container-name`.
 
 Keep in mind that the default `allow-query` options won't let you query the DNS server from outside the Docker host. This is because the options `localhost` and `localnets` refer to the virtual network range of the container and queries made from the local network of the host are seen as being made from outside the network of the container. You might want to edit named.conf and add your local network CIDR to the allow-query directive (for example: `allow-query     { localhost; localnets; 192.168.0.0/16; };`)
+
+jekyll/jekyll
+-------------
+This builds a base image with Jekyll (<http://jekyllrb.com>). You can either pass commands to it when creating the container or use the specific tasks images
+
+jekyll/builder
+--------------
+This builds an image based on `gerardvivancos/jekyll`, although you can change it to reference you own image name if you build one from the Dockerfile you can find inside the `jekyll/jekyll` folder on this repo (or have an equivalent one).
+
+It is supposed to be used like this: `docker run --rm -v /path/to/your/local/source/:/source -v /path/to/your/local/destination/:/destination your-image-tag`, but you can be more creative and link it with other containers via `volumes-from`. In the end you should have your site built on `path/to/your/local/destination`
+
+
