@@ -11,6 +11,10 @@ Intent is supposed to be clear from the directory name, so Dockerfile inside an 
 
 Please feel free to come back to me with improvements.
 
+azure-cli
+---------
+This will create an image enabled to run the latest Microsoft Azure CLI for Linux. Autocompletion is enabled.
+
 aws-cli
 -------
 This will create an image enabled to run the latest AWS CLI. It is useful because each container can use it's own AK/SK set, so with multiple containers you can manage multiple accounts with no conflicts. It also prevents you from potential Python version conflicts with your host system's installation.
