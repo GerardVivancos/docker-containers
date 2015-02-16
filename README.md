@@ -62,3 +62,7 @@ jekyll/server
 This builds an image based on `gerardvivancos/jekyll`, although you can change it to reference you own image name if you build one from the Dockerfile you can find inside the `jekyll/jekyll` folder on this repo (or have an equivalent one).
 
 It is supposed to be used like this: `docker run --rm -P -v /path/to/your/local/source/:/source -v /path/to/your/local/destination/:/destination gerardvivancos/jekyll-serve`, but you can be more creative and link it with other containers via `volumes-from`. In the end you should have your site built on `path/to/your/local/destination` and be able to browse it by pointing to the Docker host IP on the exposed port.
+
+nodejs
+------
+A simple Nodejs installation. Entrypoint is /usr/bin/node, so you can pass parameters to NodeJS as parameters to the docker run command
