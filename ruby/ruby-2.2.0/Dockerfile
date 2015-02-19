@@ -12,4 +12,5 @@ RUN apt-get update && \
         ruby-install --system ruby 2.2.0 -- --disable-install-rdoc && \
 	gem install bundler --no-ri --no-rdoc && \
         rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /usr/local/src/ruby*
+WORKDIR /root
 ENTRYPOINT ["/bin/bash"]
