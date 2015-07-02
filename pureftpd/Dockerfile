@@ -1,6 +1,7 @@
 FROM debian:wheezy
 MAINTAINER Gerard Vivancos "gerard.vivancos@gmail.com"
 ENV REFRESHED_AT 2015-07-01
+ENV DEBIAN_FRONTEND noninteractive
 RUN echo "deb http://http.debian.net/debian wheezy main\n\
     deb-src http://http.debian.net/debian wheezy main\n\
     deb http://http.debian.net/debian wheezy-updates main\n\
