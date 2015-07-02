@@ -38,6 +38,6 @@ RUN chmod +x pure-userinit.sh && ./pure-userinit.sh && pure-pw mkdb
 
 WORKDIR /opt/ftpdir
 
-ENTRYPOINT ["/usr/sbin/pure-ftpd", "-c", "30", "-C", "1", "-l", "puredb:/etc/pure-ftpd/pureftpd.pdb", "-x", "-E", "-j", "-R"]
+ENTRYPOINT ["/usr/sbin/pure-ftpd", "-c", "30", "-C", "1", "-l", "puredb:/etc/pure-ftpd/pureftpd.pdb", "-x", "-E", "-j", "-R", "-p", "30000:30009"]
 
-EXPOSE 21/tcp
+EXPOSE 20 21 30000 30001 30002 30003 30004 30005 30006 30007 30008 30009
