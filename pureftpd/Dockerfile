@@ -31,8 +31,8 @@ RUN groupadd ftpgroup && \
 ADD purepw.txt ./
 ADD pure-userinit.sh ./
 
-RUN chmod +x pure-userinit.sh && ./pure-userinit.sh
+RUN chmod +x pure-userinit.sh && ./pure-userinit.sh && pure-pw mkdb
 
-ENTRYPOINT ["/usr/sbin/pure-ftpd", "-c", "30", "-C", "1", "-l", "puredb:/etc/pure-ftpd/pure-ftpd.pdb", "-x", "-E", "-j", "-R"]
+ENTRYPOINT ["/usr/sbin/pure-ftpd", "-c", "30", "-C", "1", "-l", "puredb:/etc/pure-ftpd/pureftpd.pdb", "-x", "-E", "-j", "-R"]
 
 EXPOSE 21/tcp
