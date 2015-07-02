@@ -25,13 +25,18 @@ RUN dpkg -i /tmp/pure-ftpd/pure-ftpd-common*.deb && \
     dpkg -i /tmp/pure-ftpd/pure-ftpd_*.deb && \
     apt-mark hold pure-ftpd pure-ftpd-common
 
+RUN mkdir /opt/ftpdir
+VOLUME /opt/ftpdir
+
 RUN groupadd ftpgroup && \
-    useradd -g ftpgroup -d /dev/null -s /etc ftpuser
+    useradd -g ftpgroup -d /opt/ftpdir -s /etc ftpuser
 
 ADD purepw.txt ./
 ADD pure-userinit.sh ./
 
 RUN chmod +x pure-userinit.sh && ./pure-userinit.sh && pure-pw mkdb
+
+WORKDIR /opt/ftpdir
 
 ENTRYPOINT ["/usr/sbin/pure-ftpd", "-c", "30", "-C", "1", "-l", "puredb:/etc/pure-ftpd/pureftpd.pdb", "-x", "-E", "-j", "-R"]
 
